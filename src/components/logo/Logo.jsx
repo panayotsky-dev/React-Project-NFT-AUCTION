@@ -10,10 +10,10 @@ function Logo(type) {
   return (
     <>
     <img
-    type={defaultImg ? "default" : "muted"}
+    type={!defaultImg ? "default" : "muted"  }
     onClick={handleClick}
-    src={defaultImg ? defaultLogo : muted}
-    alt={defaultImg ? "default" : "muted" }    
+    src={!defaultImg ? defaultLogo : muted}
+    alt={!defaultImg ? "default" : "muted" }    
     ></img>
     </>
   )

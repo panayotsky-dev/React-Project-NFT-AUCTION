@@ -14,7 +14,7 @@ export default function Copyright() {
           <Link href="/about" color="secondary">
             Hi
           </Link>
-          <Logo />
+          <Logo type='default' />
         </Paper>
       </Container>
     </div>
