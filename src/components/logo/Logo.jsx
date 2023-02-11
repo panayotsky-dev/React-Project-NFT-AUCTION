@@ -1,6 +1,6 @@
 import React,{ useState} from 'react'
 
-function Logo({type= "default"}) {
+function Logo() {
   const [defaultImg, setClicked] = useState(false);
   let muted = "/images/logo-muted.svg"
   let defaultLogo = "/images/logo.svg"
