@@ -1,16 +1,18 @@
 import React,{ useState} from 'react'
 
-function Logo(type) {
+function Logo() {
   const [defaultImg, setClicked] = useState(false);
-  let muted = "/images/logo-muted.svg"
-  let defaultLogo = "/images/logo.svg"
+  let muted = {muted:"/images/logo-muted.svg"}
+  let defaultLogo = { default:"/images/logo.svg"}
+  let type = "default"
   const handleClick = () => {
     setClicked(!defaultImg)
   }
   return (
     <>
     <img
-    type={!defaultImg ? "default" : "muted"  }
+    type={type}
+    // type={!defaultImg ? "default" : "muted"  }
     onClick={handleClick}
     src={!defaultImg ? defaultLogo : muted}
     alt={!defaultImg ? "default" : "muted" }    
