@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid'
 import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import Button from '@mui/material/Button';
-import Logo from '../logo/Logo';
+import Logo from '../Logo/Logo';
 import { Toolbar } from '@mui/material';
 
 // import withStyles from '@material-ui/core/styles';
