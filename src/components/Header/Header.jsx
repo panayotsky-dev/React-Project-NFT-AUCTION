@@ -1,50 +1,58 @@
-import React, {useState} from 'react'
-import Grid from '@mui/material/Grid'
-import TextField from "@mui/material/TextField";
-import Button from '@mui/material/Button';
-import Logo from '../Logo/Logo';
+import * as React from "react"; 
+import { styled } from "@mui/material/styles"; 
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import Logo from "../logo/Logo.jsx";
+import Buttons from "./Buttons.jsx";
+import SearchBar from "./Search.jsx";
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Container from "@mui/material/Container";
+import classNames from "classnames"; 
+import styles from "./Header.module.scss";
+
+// import styles from "./Header.scss";
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: '#181828',
+  textAlign: 'center',
+  color: '#fff',
+}));
 
 
 
-// import withStyles from '@material-ui/core/styles';
-
-// const [searchInput,setSearchInput] = useState(null)
-// data
-// let data = [];
-// const handleChange = (e) => {
-//     e.preventDefault();
-//     setSearchInput(e.target.value)
-// }
-// searchInput.length > 0 ? data.filter ((data) =>{ return data.name.match(searchInput)}) : ""
-// if(searchInput.length > 0){
-//     data.filter((data)=> {
-//         return data.name.match(searchInput)
-//     })
-// }
+// The @mui/icons-material NPM package must be installed in order to set a search icon in the search input
+ 
+ 
 
 
-function Header() {
+export default function Header() {
   return (
-  <>      
-    <Grid container spacing={6}>
-        <Grid item xl>
-        <Logo />
+    <div className={classNames(styles.wrapper)}>
+    
+      <Container className={classNames(styles.container)} maxWidth="xl"> 
+
+      <AppBar position="static">
+
+        <Toolbar maxwidth="sm"> 
+        <Grid container spacing={1}>
+        <Grid item xs={2}>
+          <Item><Logo/></Item>
         </Grid>
-        <Grid item xl>
-        <TextField
-          id="outlined-helperText"
-          label="Search bar"
-          defaultValue=""        
-        />           
+        <Grid item xs={4}>
+          <Item><SearchBar/></Item>
         </Grid>
         <Grid item xs>
-        <Button variant="text">Text</Button>
-        <Button variant="text">Text</Button>
-        <Button variant="contained">Contained</Button>
+          <Item><Buttons/></Item>
         </Grid>
-    </Grid> 
-    </>
-  )
+      </Grid>
+       </Toolbar>
+   
+      </AppBar>
+
+    </Container> 
+
+</div>
+  );
 }
 
-export default Header
